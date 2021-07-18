@@ -61,9 +61,10 @@ def instructions():
         data = {l.split('\t')[1].replace('\n',''):l.split('\t')[0] for l in lines}
 #        print(f'lines: {lines}')
 #        print(f'data {data}')
+        fp.close()
     if len(lines) > max_lines_in_file:
         latest_lines = lines[-min_lines_in_file:]
-        with open(do_this_file,'w'):
+        with open(do_this_file,'w') as fp:
             fp.writelines(latest_lines)
     return data
 
