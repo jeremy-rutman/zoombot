@@ -1,3 +1,7 @@
+# to run this do
+# FLASK_APP=app.py flask run
+
+
 from flask import Flask, redirect
 from flask import render_template
 import time
