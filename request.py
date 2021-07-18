@@ -22,7 +22,10 @@ def get():
     url = 'http://178.128.26.70:5000/instructions'
     resp = requests.get(url)
     content = resp.content
-    data = eval(content)
+    try:
+        data = eval(content)
+    except:
+        data = {}
     return data
 
 

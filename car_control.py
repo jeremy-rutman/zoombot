@@ -12,4 +12,4 @@ print('hello')
 
 while(1):
     resp = request.get()
-    print(resp.content)
+    print(resp)

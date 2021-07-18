@@ -10,8 +10,8 @@ from flask import json
 from flask import jsonify
 
 do_this_file = 'commands.txt'
-max_lines_in_file = 20
-min_lines_in_file = 10
+max_lines_in_file = 5
+min_lines_in_file = 1
 app = Flask(__name__)
 #rendering the HTML page which has the button
 @app.route('/json')
