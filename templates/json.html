@@ -1,0 +1,67 @@
+
+<body>
+<img src="/home/jeremy/Dropbox/projects/PycharmProjects/zoombot/latest.jpg" alt="latest raspi image">
+<img src="latest.png" alt="latest raspi image png">
+
+<div class='container'>
+    <h3>Test</h3>
+        <form>
+            <a href=# id=test><button class='btn btn-default'>FORWARD</button></a>
+            <a href=# id=test2><button class='btn btn-default'>LEFT</button></a>
+            <a href=# id=test3><button class='btn btn-default'>RIGHT</button></a>
+            <a href=# id=test4><button class='btn btn-default'>BACKWARD</button></a>
+        </form>
+
+</div>
+</body>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $('a#test').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/forward',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+</script>
+<script type=text/javascript>
+        $(function() {
+          $('a#test2').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/left',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+</script>
+<script type=text/javascript>
+        $(function() {
+          $('a#test3').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/right',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+</script>
+<script type=text/javascript>
+        $(function() {
+          $('a#test4').on('click', function(e) {
+            e.preventDefault()
+            $.getJSON('/backward',
+                function(data) {
+              //do nothing
+            });
+            return false;
+          });
+        });
+</script>
