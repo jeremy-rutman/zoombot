@@ -64,7 +64,7 @@ def instructions():
     if len(lines) > max_lines_in_file:
         latest_lines = lines[-min_lines_in_file:]
         with open(do_this_file,'w'):
-            fp.write(latest_lines)
+            fp.writelines(latest_lines)
     return data
 
 @app.route('/')
