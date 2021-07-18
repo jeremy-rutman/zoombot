@@ -24,7 +24,9 @@ def get():
     content = resp.content
     try:
         data = eval(content)
-    except:
+        data = {float(k):v for k,v in data.items()}
+    except Exception as e:
+        print(e)
         data = {}
     return data
 
