@@ -27,28 +27,28 @@ def json():
 def forward():
     print("FORWARD")
     with open(do_this_file,'a+') as fp:
-        fp.write('F\t'+str(time.time())+'\n')
+        fp.write('F\t'+str(round(time.time(),2))+'\n')
     return render_template('json.html')
 
 @app.route('/backward')
 def backward():
     print("BACKWARD")
     with open(do_this_file,'a+') as fp:
-        fp.write('B\t'+str(time.time())+'\n')
+        fp.write('B\t'+str(round(time.time(),2))+'\n')
     return render_template('json.html')
 
 @app.route('/left')
 def left():
     print("LEFT")
     with open(do_this_file,'a+') as fp:
-        fp.write('L\t'+str(time.time())+'\n')
+        fp.write('L\t'+str(round(time.time(),2))+'\n')
     return("nothing")
 
 @app.route('/right')
 def right():
     print("RIGHT")
     with open(do_this_file,'a+') as fp:
-        fp.write('R\t'+str(time.time())+'\n')
+        fp.write('R\t'+str(round(time.time(),2))+'\n')
     return("nothing")
 
 
@@ -57,8 +57,8 @@ def instructions():
     print("send instructions")
     with open(do_this_file,'r') as fp:
         lines = fp.readlines()
-        data = {i:l  for i,l in enumerate(lines)}
-#        data = {l.split('\t')[0]:l.split('\t')[1].replace('\n','') for l in lines}
+        #data = {i:l  for i,l in enumerate(lines)}
+        data = {l.split('\t')[1]:l.split('\t')[0].replace('\n','') for l in lines}
 #        print(f'lines: {lines}')
 #        print(f'data {data}')
     if len(lines) > max_lines_in_file:
@@ -70,6 +70,7 @@ def instructions():
 @app.route('/')
 def home():
    return render_template('json.html')
+
 if __name__ == '__main__':
     instructions()
     app.run()
