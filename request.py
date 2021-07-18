@@ -17,7 +17,8 @@ import base64
 # print('response content',resp.json())
 
 def sendfile(fname):
-    url = 'http://127.0.0.1:5000/instructions'
+#    url = 'http://127.0.0.1:5000/instructions'
+    url = 'http://178.128.26.70:5000/instructions'
     resp = requests.get(url)
 
     print('response is ',resp)
