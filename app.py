@@ -2,6 +2,9 @@ from flask import Flask, redirect
 from flask import render_template
 import time
 
+from flask import json
+from flask import jsonify
+
 do_this_file = 'commands.txt'
 
 app = Flask(__name__)
@@ -45,6 +48,19 @@ def left():
 def right():
     print("RIGHT")
     return("nothing")
+
+@app.route('/instructions')
+def instructions():
+    print("send instructions")
+    data = {1:"KEEP TRUCKING"}
+    # response = app.response_class(
+    #     response=json.dumps(data),
+    #     status=200,
+    #     mimetype='application/json'
+    # )
+    # return response
+ #   return jsonify(data)
+    return data
 
 @app.route('/')
 def home():
