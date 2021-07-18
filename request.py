@@ -21,12 +21,11 @@ def get():
 #    url = 'http://127.0.0.1:5000/instructions'
     url = 'http://178.128.26.70:5000/instructions'
     resp = requests.get(url)
-    print('response is ',resp)
-    print('response content',resp.json())
-    print('response content',resp.json())
-    return resp
+    content = resp.content
+    data = eval(content)
+    return data
 
 
-while(1):
-    get()
-    sleep(0.1)
+# while(1):
+#     get()
+#     sleep(0.1)

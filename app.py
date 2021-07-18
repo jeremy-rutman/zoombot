@@ -58,7 +58,7 @@ def instructions():
     with open(do_this_file,'r') as fp:
         lines = fp.readlines()
         #data = {i:l  for i,l in enumerate(lines)}
-        data = {l.split('\t')[1]:l.split('\t')[0].replace('\n','') for l in lines}
+        data = {l.split('\t')[1].replace('\n',''):l.split('\t')[0] for l in lines}
 #        print(f'lines: {lines}')
 #        print(f'data {data}')
     if len(lines) > max_lines_in_file:
