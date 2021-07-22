@@ -31,6 +31,8 @@ def get():
     return data
 
 
-# while(1):
-#     get()
-#     sleep(0.1)
+if __name__ == '__main__':
+    while(1):
+        data = get()
+        print(data)
+        sleep(0.1)
