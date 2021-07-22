@@ -32,7 +32,7 @@ def get():
 
 
 if __name__ == '__main__':
-    while( 1 ):
+    while(1):
         data = get()
         print(data)
         sleep(0.1)
