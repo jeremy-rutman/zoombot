@@ -5,7 +5,7 @@ import request
 import time
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
-FWD_PIN = 27
+FWD_PIN = 27  # if you remember the correct pins , you can change these
 REV_PIN = 28
 LEFT_PIN = 39
 RIGHT_PIN = 40
