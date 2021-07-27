@@ -5,12 +5,12 @@ import request
 import time
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BOARD)
-FWD_PIN = 27  # if you remember the correct pins , you can change these
-REV_PIN = 28
-LEFT_PIN = 39
-RIGHT_PIN = 40
-LIGHTS_PIN = 41
-all_pins = [FWD_PIN,REV_PIN,LEFT_PIN,RIGHT_PIN]
+FWD_PIN = 21  # if you remember the correct pins , you can change these
+REV_PIN = 22
+LEFT_PIN = 32
+RIGHT_PIN = 11
+LIGHTS_PIN = 37
+all_pins = [FWD_PIN,REV_PIN,LEFT_PIN,RIGHT_PIN,LIGHTS_PIN]
 for channel in all_pins:
     GPIO.setup(channel, GPIO.IN)
     GPIO.output(channel, GPIO.LOW)
